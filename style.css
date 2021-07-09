@@ -107,7 +107,7 @@ transition-duration: 2s;
 #input{
   padding: 0.8em 4em;
   border-radius: 360px;
-  margin: 25px 0 25px 10px;
+  margin: 25px 0 25px 100px;
 }
 
 .container2{
@@ -117,7 +117,21 @@ transition-duration: 2s;
   width: 100%;
 }
 
+footer{
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 
+}
+footer a{
+  font-size: 40px;
+  color: rgba(0,250,100,1);
+  height: 100px;
+  padding: 10px 10px;
+  margin-top: 0;
+}
 
 @media only screen and (min-width: 768px) {
   body{
@@ -147,7 +161,7 @@ transition-duration: 2s;
   #input{
     padding: 1em 5em;
     border-radius: 360px;
-    margin: 0 auto;
+    margin: 0 0 0 120px;
   }
   #submit{
     background: rgba(20, 20, 200, 0.6);
@@ -193,7 +207,7 @@ transition-duration: 2s;
   #input{
     padding: 1em 5em;
     border-radius: 360px;
-    margin: 0 auto;
+    margin: 0 0 0 140px;
   }
   #submit{
     background: rgba(20, 20, 200, 0.6);
