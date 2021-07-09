@@ -5,7 +5,7 @@ const $btn = $('#submit')
 const $modal =$('.modal1')
 const $par = $('<p>')
 const $btn2 =$('.closeBtn')
-
+const $numb = $('<h>')
 
 $btn.on('click', (event)=>{
   event.preventDefault()
@@ -13,20 +13,30 @@ $btn.on('click', (event)=>{
   $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?zip="+userInput+",us&appid=724e99c34181dddb70e43c218698fb6e"
 
-  }).then((data)=>{
-  //  console.log(data)
-    const temperature = Math.floor((parseInt(data.main.temp)-273.15) * 9/5+32)
-    $par.text('It is ' + temperature + ' degree in ' + data.name + ' SAFE TRIP!!!')
-    //console.log($par)
-    $modal.append($par)
-    $('.modal').show()
+  }).then(
+    (data)=>{
+      //  console.log(data)
+      const temperature = Math.floor((parseInt(data.main.temp)-273.15) * 9/5+32)
+      $par.text('It is ' + temperature + ' degree in ' + data.name + ' SAFE TRIP!!!').css('font-size', '25px')
+      $par.css('color', 'rgba(250,0,0,0.5)')
+      //console.log($par)
+      $numb.text(temperature + '℉').attr('id','temp')
+      $modal.append($par)
 
-    $btn2.on('click',(event)=>{
-      event.preventDefault()
-      $('.modal').hide()
-    })
-    console.log(temperature + ' degre')
-  })
+      $modal.append($numb)
+      $('.modal').show()
+
+
+      $btn2.on('click',(event)=>{
+        event.preventDefault()
+        $('.modal').hide()
+      })
+      console.log(temperature + ' degre')
+  },
+  ()=>{
+      console.log('bad request')
+    }
+)
 
 
 })
