@@ -361,7 +361,7 @@ footer{
 }
 footer a{
   font-size: 40px;
-  color: rgba(0,250,100,1);
+  color: white;
   height: 100%;
   padding: 10px 10px;
 
@@ -491,7 +491,7 @@ footer a:hover{
   }
   footer a{
     font-size: 40px;
-    color: rgba(0,250,100,1);
+    color: white;
     padding: 10px 10px;
 
   }
