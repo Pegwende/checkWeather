@@ -7,8 +7,13 @@ const $par = $('<p>')
 const $btn2 =$('.closeBtn')
 const $numb = $('<h>')
 
+$text.on('click', ()=>{
+  $text.val('')
+})
+
 $btn.on('click', (event)=>{
   event.preventDefault()
+
   const userInput = $text.val()
   $.ajax({
     url:"https://api.openweathermap.org/data/2.5/weather?zip="+userInput+",us&appid=724e99c34181dddb70e43c218698fb6e"
@@ -34,6 +39,7 @@ $btn.on('click', (event)=>{
       console.log(temperature + ' degre')
   },
   ()=>{
+    alert('NOT a VALID ZIP-CODE TRY again!!!!')
       console.log('bad request')
     }
 )
